@@ -6,6 +6,7 @@ describe("navigates to set site", () => {
       log: false,
     });
     cy.get("#Login").click();
+    // NOTE: this is not a pattern we want to encourage. We should be able to set base url and immediately hop into a cy.origin
     cy.origin("https://cypress-dev-ed.develop.lightning.force.com", () => {
       cy.get(".title.slds-truncate").first().should("have.text", "Home");
     });
